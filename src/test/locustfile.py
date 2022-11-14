@@ -1,6 +1,7 @@
 from locust import HttpUser, task
 
+
 class EpochMaker(HttpUser):
     @task
-    def hello_world(self):
+    def main_path(self):
         self.client.post("/epoch")

@@ -1,4 +1,5 @@
 .terraform
+.terraform.lock.hcl
 src/package
 src/deployment-package.zip
 .DS_Store
