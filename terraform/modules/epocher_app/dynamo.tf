@@ -6,16 +6,16 @@ resource "aws_dynamodb_table" "dynamodb-table" {
   hash_key       = "id"
   range_key      = "Epoch"
 
-# TODO: Lambda should write the user ip address from the event event['requestContext']['http']['sourceIp']
-# TODO: epochs_to_time should be a value that can be easily "ranged" by day time hour etc.
+  # TODO: Lambda should write the user ip address from the event event['requestContext']['http']['sourceIp']
+  # TODO: epochs_to_time should be a value that can be easily "ranged" by day time hour etc.
   attribute {
     name = "id"
     type = "S"
   }
 
   # attribute {
-    # name = "UserIP"
-    # type = "S"
+  # name = "UserIP"
+  # type = "S"
   # }
 
   attribute {
@@ -40,7 +40,7 @@ resource "aws_dynamodb_table" "dynamodb-table" {
   }
 
   tags = {
-    Name        = "dada"
-    Environment = "dada"
+    Name        = "${var.application_name}"
+    Environment = "${var.environment}"
   }
 }

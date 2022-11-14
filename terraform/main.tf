@@ -16,16 +16,16 @@ terraform {
 provider "aws" {
   region = "us-east-2"
   # assume_role {
-    # role_arn = "some_role"
+  # role_arn = "some_role"
   # }
 }
 
 data "aws_caller_identity" "current" {}
 
-module epocher_app {
-  source = "./modules/epocher_app"
-  account_id = data.aws_caller_identity.current.account_id
-  region = "us-east-2"
+module "epocher_app" {
+  source           = "./modules/epocher_app"
+  account_id       = data.aws_caller_identity.current.account_id
+  region           = "us-east-2"
   application_name = var.application_name
-  environment = var.environment
+  environment      = var.environment
 }

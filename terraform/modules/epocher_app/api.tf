@@ -20,10 +20,10 @@ resource "aws_api_gateway_method" "example" {
 }
 
 resource "aws_api_gateway_integration" "example" {
-  http_method = aws_api_gateway_method.example.http_method
-  resource_id = aws_api_gateway_resource.example.id
-  rest_api_id = aws_api_gateway_rest_api.example.id
-  type        = "AWS_PROXY"
+  http_method             = aws_api_gateway_method.example.http_method
+  resource_id             = aws_api_gateway_resource.example.id
+  rest_api_id             = aws_api_gateway_rest_api.example.id
+  type                    = "AWS_PROXY"
   integration_http_method = "POST"
   uri                     = aws_lambda_function.lambda.invoke_arn
 }
@@ -52,9 +52,9 @@ resource "aws_api_gateway_deployment" "example" {
 }
 
 resource "aws_api_gateway_stage" "example" {
-  deployment_id = aws_api_gateway_deployment.example.id
-  rest_api_id   = aws_api_gateway_rest_api.example.id
-  stage_name    = "example"
+  deployment_id        = aws_api_gateway_deployment.example.id
+  rest_api_id          = aws_api_gateway_rest_api.example.id
+  stage_name           = "example"
   xray_tracing_enabled = true
 }
 

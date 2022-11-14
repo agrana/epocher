@@ -11,16 +11,16 @@ data "aws_iam_policy" "XRay" {
 }
 
 resource "aws_iam_role_policy_attachment" "Clouwatch" {
-  role       = "${aws_iam_role.iam_for_lambda.name}"
-  policy_arn = "${data.aws_iam_policy.Cloudwatch.arn}"
+  role       = aws_iam_role.iam_for_lambda.name
+  policy_arn = data.aws_iam_policy.Cloudwatch.arn
 }
 
 resource "aws_iam_role_policy_attachment" "DynamoDB" {
-  role       = "${aws_iam_role.iam_for_lambda.name}"
-  policy_arn = "${data.aws_iam_policy.DynamoDB.arn}"
+  role       = aws_iam_role.iam_for_lambda.name
+  policy_arn = data.aws_iam_policy.DynamoDB.arn
 }
 
 resource "aws_iam_role_policy_attachment" "XRay" {
-  role       = "${aws_iam_role.iam_for_lambda.name}"
-  policy_arn = "${data.aws_iam_policy.XRay.arn}"
+  role       = aws_iam_role.iam_for_lambda.name
+  policy_arn = data.aws_iam_policy.XRay.arn
 }

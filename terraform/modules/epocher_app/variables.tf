@@ -1,5 +1,5 @@
 variable "application_name" {
-  type = string
+  type    = string
   default = "epocher"
 }
 
@@ -11,6 +11,6 @@ variable "account_id" {
   type = string
 }
 
-variable region {
+variable "region" {
   type = string
 }
