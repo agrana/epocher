@@ -1,0 +1,4 @@
+.terraform
+src/package
+src/deployment-package.zip
+.DS_Store
